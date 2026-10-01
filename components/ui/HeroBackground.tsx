@@ -5,7 +5,7 @@ export type HeroImage = 'home' | 'solutions' | 'vision' | 'modernization' | 'pro
 export function HeroBackground({ image }: { image: HeroImage }) {
   return (
     <div aria-hidden="true" className="hero-background pointer-events-none absolute inset-0">
-      <Image src={`/images/heroes/${image}-v1.webp`} alt="" fill sizes="100vw" loading="eager" fetchPriority="high" className="hero-background-image object-cover" />
+      <Image src={`/images/heroes/${image}-v1.webp`} alt="" fill sizes="100vw" preload unoptimized className="hero-background-image object-cover" />
       <div className="hero-background-shade absolute inset-0" />
     </div>
   );
