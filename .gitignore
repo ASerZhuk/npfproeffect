@@ -1,0 +1,41 @@
+# Dependencies
+node_modules
+
+# Next.js and generated types
+.next
+next-env.d.ts
+*.tsbuildinfo
+
+# Build and test output
+/out/
+/dist/
+/build/
+/coverage/
+/playwright-report/
+/test-results/
+
+# Local environment and deployment settings
+.env*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.*.sample
+.vercel/
+
+# Logs, caches and temporary files
+*.log
+/.cache/
+/tmp/
+/logs/
+*.tmp
+*.swp
+*.swo
+*~
+
+# Local editor and OS files
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+.website
+/pages/

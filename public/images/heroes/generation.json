@@ -1,0 +1,55 @@
+{
+  "generator": "built-in image_gen",
+  "usage": "Decorative generated hero backgrounds, not documentary photos of client facilities.",
+  "basePrompt": "Use case: photorealistic-natural. Asset type: edge-to-edge panoramic background image for a Russian B2B industrial engineering website hero. Create one premium photorealistic wide industrial photograph, ultra-wide composition approximately 3:1 (prefer 2400x800). Cool graphite, steel and deep navy palette with restrained blue lighting matching a navy website. The existing white heading and paragraph will overlay the LEFT half, so keep the left 55% dark, calm and low-detail with natural industrial negative space, not a blank black rectangle; concentrate sharp machinery and the subject on the RIGHT 45%, with generous framing for responsive crops. Realistic materials, credible industrial construction, polished architectural photography, controlled highlights, no neon, no sci-fi holograms, no illustration, no people, no text, no UI, no logos, no watermark. This is a decorative thematic generated image, not documentary evidence of a specific customer facility. Scene: ",
+  "images": [
+    {
+      "file": "home-v1.webp",
+      "scene": "A modern production hall with a large open PLC control cabinet in the right foreground, carefully routed wiring, DIN rail controllers, steel machinery and workshop depth beyond."
+    },
+    {
+      "file": "solutions-v1.webp",
+      "scene": "Integrated automation in a manufacturing hall: industrial sensors, control cabinets and interconnected production equipment, subject on right, coherent physical installation."
+    },
+    {
+      "file": "vision-v1.webp",
+      "scene": "Industrial machine vision camera and ring light inspecting unbranded packages on a real conveyor, close but wide perspective, camera assembly and conveyor on right."
+    },
+    {
+      "file": "modernization-v1.webp",
+      "scene": "Modernized metalworking CNC lathe with a clean new operator control panel and upgraded electrical cabinet on the right, authentic worn steel alongside modern controls."
+    },
+    {
+      "file": "production-v1.webp",
+      "scene": "Precision electronics manufacturing bench with real circuit boards, assembly instruments and a compact robotic workcell on right, orderly modern engineering workshop."
+    },
+    {
+      "file": "services-v1.webp",
+      "scene": "Close-up of an industrial control cabinet with organized wiring and measurement instruments on the right, planned maintenance and instrumentation setting."
+    },
+    {
+      "file": "projects-v1.webp",
+      "scene": "Expansive industrial production line with multiple automation stations and control cabinets, breadth of implemented engineering work, strong equipment detail on right."
+    },
+    {
+      "file": "case-v1.webp",
+      "scene": "An industrial rubber mixing process installation with enclosed rubber mixing machinery and a PLC control cabinet on right; generic industrial illustration, no specific factory identity."
+    },
+    {
+      "file": "about-v1.webp",
+      "scene": "An engineering workshop with assembled electrical control cabinets and technical drafting workstations on right, credible small industrial engineering company rather than futuristic megafactory."
+    },
+    {
+      "file": "articles-v1.webp",
+      "scene": "Technical desk in an engineering workshop with an open technical notebook without readable writing, circuit board and measuring instruments on right, industrial equipment softly beyond."
+    },
+    {
+      "file": "contacts-v1.webp",
+      "scene": "Quiet industrial engineering office adjoining a workshop, desk with a telephone handset and control cabinet visible through glass on right, no signs or addresses."
+    },
+    {
+      "file": "quiz-v1.webp",
+      "scene": "Technical design workstation and control cabinet on right, monitor showing a subtle non-readable schematic, instruments and blueprint sheets without readable text, planning an industrial automation project."
+    }
+  ]
+}

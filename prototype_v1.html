@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Прототип главной страницы</title>
+<style>
+:root{--dark:#2c3d52;--dark2:#3a4c62;--light:#f4f6f9;--card:#eef1f5;--line:#dde2ea;--txt:#1d2733;--muted:#6b7785;--blue:#3d8ff0;--ph:#cfd5dd;--phl:#aeb6c1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;color:var(--txt);background:#fff;font-size:13px;line-height:1.35}
+a{color:inherit;text-decoration:none}
+.page{width:100%}
+.main{width:100%}
+.side{flex:1;border-left:1px solid var(--line);padding:24px 0 24px 24px}
+section,header,footer{position:relative}
+.num{position:absolute;left:-40px;top:18px;width:26px;height:26px;border-radius:50%;background:#4a5563;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sec{padding:34px 36px;display:flex;gap:30px;margin-bottom:8px}
+.sec.l{background:var(--light)}
+.sec.d{background:var(--dark);color:#fff}
+.intro{width:250px;flex-shrink:0}
+.intro h2{font-size:22px;margin-bottom:12px}
+.intro p{font-size:12px;color:var(--muted)}
+.d .intro p{color:#c3ccd7}
+.more{display:inline-block;margin-top:14px;color:var(--blue);font-size:12px;font-weight:600}
+.ph{background:linear-gradient(to top right,transparent calc(50% - .7px),var(--phl) 50%,transparent calc(50% + .7px)),linear-gradient(to bottom right,transparent calc(50% - .7px),var(--phl) 50%,transparent calc(50% + .7px)),var(--ph);border:1px solid var(--phl)}
+.bar{height:6px;background:#d6dbe2;border-radius:2px;margin-top:8px}
+.bar.s{width:60%}
+.card{background:#fff;border:1px solid var(--line);border-radius:3px}
+.l .card{background:var(--card)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:0 22px;height:36px;border-radius:3px;font-size:12px;font-weight:600;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-out{border-color:#fff;color:#fff}
+/* 1 header */
+header{height:52px;display:flex;align-items:center;padding:0 36px;gap:40px;background:#fff}
+.logo{width:110px;height:30px;background:#dfe3e8;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#444}
+header nav{display:flex;gap:22px;font-size:11px;flex:1;justify-content:center}
+.phone{font-size:12px}
+header .btn{height:30px;padding:0 20px;font-size:11px}
+/* 2 hero */
+.hero{background:var(--dark);color:#fff;padding:36px 36px 30px;display:flex;gap:36px}
+.hero-l{flex:1}
+.hero .tag{font-size:13px;color:#c3ccd7;margin-bottom:12px}
+.hero h1{font-size:34px;line-height:1.1;margin-bottom:18px}
+.hero p{font-size:14px;color:#e2e7ee;margin-bottom:24px;max-width:420px}
+.hero .btns{display:flex;gap:18px;margin-bottom:18px}
+.hero .btns .btn{height:38px;padding:0 32px}
+.pills{display:flex;gap:10px}
+.pills span{background:var(--dark2);border:1px solid #56687e;font-size:11px;padding:6px 18px;border-radius:3px}
+.hero-img{width:470px;height:245px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;color:#3b4652;--ph:#cfd4db}
+.hero-img span{background:var(--ph);padding:2px 4px}
+/* 3 trust */
+.trust{display:flex;padding:18px 36px;margin-bottom:8px}
+.trust div{flex:1;text-align:center;border-right:1px solid var(--line)}
+.trust div:last-child{border:0;display:flex;align-items:center;justify-content:center;gap:14px;text-align:left;font-size:11px}
+.trust b{display:block;font-size:19px}
+.trust small{font-size:12px;color:var(--muted)}
+/* 4 comp */
+.grid{flex:1;display:grid;gap:14px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g6{grid-template-columns:repeat(6,1fr);gap:10px}
+.comp{padding:14px;height:130px}
+.comp .ico{width:28px;height:28px;margin-bottom:12px}
+.comp b{display:block;font-size:13px;min-height:34px}
+.prod{padding:10px}
+.prod .ph{height:52px;margin-bottom:10px}
+.prod b{display:block;font-size:10px;min-height:26px}
+/* 6 steps */
+.steps{flex:1;display:grid;grid-template-columns:repeat(6,1fr);position:relative}
+.steps:before{content:"";position:absolute;left:8%;right:8%;top:16px;height:1px;background:#8595a8}
+.step{text-align:center;position:relative}
+.step i{display:inline-flex;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--txt);font-style:normal;font-weight:700;font-size:12px;align-items:center;justify-content:center;margin-bottom:10px}
+.step b{display:block;font-size:12px;margin-bottom:6px}
+.step small{font-size:9.5px;color:#c3ccd7;display:block}
+/* 7 services */
+.srv{flex:1;display:flex;flex-direction:column;gap:14px}
+.srv .row{display:grid;gap:12px}
+.srv .r1{grid-template-columns:repeat(4,1fr)}
+.srv .r2{grid-template-columns:repeat(5,1fr)}
+.si{display:flex;align-items:center;gap:10px;padding:10px;font-size:10.5px;height:54px}
+.si .ico{width:24px;height:24px;flex-shrink:0}
+/* 8 solutions */
+.tabs{display:flex;gap:8px;margin-bottom:14px}
+.tabs span{padding:6px 26px;font-size:11px;border-radius:2px;background:#e3e7ec;color:var(--muted)}
+.tabs span.on{background:var(--dark);color:#fff}
+.sol{padding:10px;height:84px;text-align:center;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.sol .ico{width:26px;height:22px}
+/* 9 projects */
+.proj{overflow:hidden}
+.proj .ph{height:62px;border:0;border-bottom:1px solid var(--phl)}
+.proj .in{padding:10px 12px 14px;position:relative}
+.badge{position:absolute;top:-10px;left:12px;background:#dbe8fb;color:#2a6fd0;font-size:9.5px;padding:3px 8px;border-radius:2px}
+.proj b{display:block;font-size:13.5px;margin:10px 0 10px;min-height:36px}
+.proj small{font-size:11px;color:var(--muted)}
+/* 10 news */
+.news{display:flex;gap:12px;padding:8px;align-items:center}
+.news .ph{width:66px;height:52px;flex-shrink:0}
+.news small{font-size:9.5px;color:var(--muted);display:block;margin-bottom:6px}
+.news b{font-weight:500;font-size:11.5px}
+/* 11 faq */
+.faq{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.faq div{display:flex;justify-content:space-between;padding:7px 14px;font-size:11px;border:1px solid var(--line);border-radius:3px;background:#fff}
+.faq div:after{content:"+";color:var(--muted)}
+/* 12 contacts */
+.cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.cols h2{font-size:16px!important;margin-bottom:8px}
+.cols h4{font-size:13px;margin-bottom:12px}
+.check li{list-style:none;font-size:11px;color:#3d4957;margin-bottom:12px;padding-left:22px;position:relative}
+.check li:before{content:"✓";position:absolute;left:0;font-weight:700;color:var(--txt)}
+.ci{display:flex;gap:14px;font-size:11.5px;margin-top:14px;align-items:center}
+.ci svg{width:14px;height:14px;flex-shrink:0}
+.form{padding:14px;background:#fff}
+.form input{width:100%;height:24px;border:1px solid var(--line);border-radius:2px;font-size:10px;padding:0 10px;margin-bottom:6px;color:var(--muted)}
+.form .btn{width:100%;justify-content:center;height:32px;margin-top:6px}
+/* 13 cta */
+.cta{background:var(--dark);color:#fff;padding:24px 36px;display:flex;gap:40px;margin-bottom:12px}
+.cta h2{font-size:26px;margin-bottom:10px}
+.cta p{font-size:13px;color:#e2e7ee}
+.cta form{margin-left:auto;display:flex;flex-direction:column;justify-content:center}
+.cta .f{display:flex;gap:12px}
+.cta input{height:34px;width:150px;border:0;border-radius:2px;padding:0 12px;font-size:11px}
+.cta .btn{height:34px}
+.cta small{font-size:10.5px;color:#c3ccd7;text-align:right;margin-top:10px}
+/* 14 footer */
+footer{display:flex;align-items:center;gap:26px;padding:16px 36px 20px}
+footer .logo{width:94px;height:36px;font-size:16px}
+footer .tl{font-size:9.5px;color:var(--muted);width:130px}
+footer nav{display:flex;gap:16px;font-size:11px;flex:1;justify-content:center;white-space:nowrap}
+footer .r{text-align:right;font-size:9.5px;color:var(--muted)}
+footer .soc{display:flex;gap:10px;justify-content:flex-end;margin-bottom:8px}
+footer .soc i{width:16px;height:14px;background:var(--dark);border-radius:3px;display:block}
+footer .r a{text-decoration:underline}
+footer .fc .ci{margin:0 0 6px;font-size:11px;gap:10px}
+footer .fc .ci svg{width:12px;height:12px}
+/* sidebar */
+.side h3{font-size:19px;line-height:1.3;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.item{display:flex;gap:18px;margin-bottom:0;min-height:0}
+.item i{width:30px;height:30px;border-radius:50%;background:#4a5563;color:#fff;font-style:normal;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.item b{display:block;font-size:14px;margin-bottom:4px}
+.item span{font-size:12px;color:var(--muted)}
+.legend{border:1px solid var(--line);border-radius:4px;padding:16px;margin-top:40px}
+.legend b{display:block;font-size:13px;margin-bottom:14px}
+.lg{display:flex;align-items:center;gap:14px;font-size:11.5px;margin-bottom:14px}
+.lg i{width:44px;height:22px;display:block;border-radius:2px}
+.main>*{padding-left:max(36px,calc((100% - 1440px) / 2));padding-right:max(36px,calc((100% - 1440px) / 2))}
+/* scale x1.3 */
+.main>*>*{zoom:1.3}
+header{height:68px;gap:52px}
+.sec{padding-top:44px;padding-bottom:44px;gap:28px;margin-bottom:10px;flex-direction:column}
+.sec .intro{width:auto!important;max-width:560px;padding-top:0!important}
+.hero{padding-top:46px;padding-bottom:40px;gap:46px}
+.trust{padding-top:24px;padding-bottom:24px;margin-bottom:10px}
+.cta{padding-top:32px;padding-bottom:32px;gap:52px}
+footer{padding-top:20px;padding-bottom:26px;gap:24px;justify-content:space-between}
+footer .fc{white-space:nowrap}
+.fbot{display:flex;align-items:center;gap:24px;padding-top:14px;padding-bottom:18px;border-top:1px solid var(--line);font-size:9.5px;color:var(--muted)}
+.fbot a{text-decoration:underline}
+.fbot .soc{display:flex;gap:10px;margin-left:auto}
+.fbot .soc i{width:16px;height:14px;background:var(--dark);border-radius:3px;display:block}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="main">
+
+<!-- 1 -->
+<header>
+  <div class="logo">ЛОГО</div>
+  <nav><a>Решения</a><a>Услуги</a><a>Продукция</a><a>Проекты</a><a>О компании</a><a>Контакты</a></nav>
+  <span class="phone">+7 (495) 123-45-67</span>
+  <a class="btn btn-dark">Обсудить проект →</a>
+</header>
+
+<!-- 2 -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="tag">Инженерия, которая работает</div>
+    <h1>Автоматизация<br>производств под ключ</h1>
+    <p>Проектируем, разрабатываем и внедряем АСУ ТП, испытательные стенды, системы технического зрения и решения по модернизации оборудования.</p>
+    <div class="btns"><a class="btn btn-blue">Обсудить проект →</a><a class="btn btn-out">Смотреть проекты</a></div>
+    <div class="pills"><span>АСУ ТП</span><span>Испытания</span><span>Техническое зрение</span><span>Модернизация</span></div>
+  </div>
+  <div class="hero-img ph"><span>Изображение оборудования<br>/ производства</span></div>
+</section>
+
+<!-- 3 -->
+<section class="trust">
+  <div><b>С 2012 года</b><small>на рынке</small></div>
+  <div><b>4</b><small>ключевых направления</small></div>
+  <div><b>100+</b><small>реализованных проектов</small></div>
+  <div><svg width="22" height="26" viewBox="0 0 22 26" fill="none" stroke="#2c3d52" stroke-width="2"><path d="M11 1 2 5v7c0 6 4 10 9 13 5-3 9-7 9-13V5z"/></svg>Комплексные решения<br>под ключ</div>
+</section>
+
+<!-- 4 -->
+<section class="sec l">
+  <div class="intro"><h2>Наши компетенции</h2><p>Технологические направления, в которых мы эксперты</p></div>
+  <div class="grid g4">
+    <div class="card comp"><div class="ico ph"></div><b>АСУ ТП</b><div class="bar"></div><div class="bar s"></div></div>
+    <div class="card comp"><div class="ico ph"></div><b>Испытательные стенды</b><div class="bar"></div><div class="bar s"></div></div>
+    <div class="card comp"><div class="ico ph"></div><b>Техническое зрение</b><div class="bar"></div><div class="bar s"></div></div>
+    <div class="card comp"><div class="ico ph"></div><b>Модернизация оборудования</b><div class="bar"></div><div class="bar s"></div></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="sec l">
+  <div class="intro" style="width:140px"><h2>Продукция</h2><p>Серийное и проектное оборудование собственного производства</p></div>
+  <div class="grid g6">
+    <div class="card prod"><div class="ph"></div><b>Шкафы управления</b><div class="bar"></div><div class="bar s"></div></div>
+    <div class="card prod"><div class="ph"></div><b>Испытательные стенды</b><div class="bar"></div><div class="bar s"></div></div>
+    <div class="card prod"><div class="ph"></div><b>Системы тех. зрения</b><div class="bar"></div><div class="bar s"></div></div>
+    <div class="card prod"><div class="ph"></div><b>Промышленные контроллеры</b><div class="bar"></div><div class="bar s"></div></div>
+    <div class="card prod"><div class="ph"></div><b>Доп. оборудование</b><div class="bar"></div><div class="bar s"></div></div>
+    <div class="card prod"><div class="ph"></div><b>Спец. решения</b><div class="bar"></div><div class="bar s"></div></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="sec d">
+  <div class="intro" style="width:210px"><h2>Как мы работаем</h2><p>Прозрачный и понятный процесс реализации проекта</p></div>
+  <div class="steps">
+    <div class="step"><i>01</i><b>Обследование</b><small>Анализ задач<br>и аудит объекта</small></div>
+    <div class="step"><i>02</i><b>Проектирование</b><small>Разработка<br>технического решения</small></div>
+    <div class="step"><i>03</i><b>Разработка ПО</b><small>Программирование<br>и тестирование</small></div>
+    <div class="step"><i>04</i><b>Сборка</b><small>Изготовление<br>и заводские испытания</small></div>
+    <div class="step"><i>05</i><b>Монтаж и ПНР</b><small>Установка,<br>пусконаладка, обучение</small></div>
+    <div class="step"><i>06</i><b>Сервис</b><small>Техническая поддержка<br>и развитие</small></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="sec">
+  <div class="intro" style="width:160px"><h2>Услуги</h2><p>Комплекс услуг на всех этапах жизненного цикла проекта</p></div>
+  <div class="srv">
+    <div class="row r1">
+      <div class="card si"><div class="ico ph"></div>Технический аудит<br>и обследование</div>
+      <div class="card si"><div class="ico ph"></div>Проектирование<br>и инжиниринг</div>
+      <div class="card si"><div class="ico ph"></div>Разработка ПО<br>и алгоритмов</div>
+      <div class="card si"><div class="ico ph"></div>Производство<br>и сборка</div>
+    </div>
+    <div class="row r2">
+      <div class="card si"><div class="ico ph"></div>Поставка оборудования</div>
+      <div class="card si"><div class="ico ph"></div>Монтаж и<br>пусконаладка</div>
+      <div class="card si"><div class="ico ph"></div>Обучение<br>персонала</div>
+      <div class="card si"><div class="ico ph"></div>Сервисное<br>обслуживание</div>
+      <div class="card si"><div class="ico ph"></div>Модернизация<br>и ретрофит</div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="sec l">
+  <div class="intro" style="width:150px;padding-top:24px"><h2>Решения</h2><p>Готовые подходы для типовых задач и отраслей</p></div>
+  <div style="flex:1">
+    <div class="tabs"><span class="on">По задачам</span><span>По отраслям</span></div>
+    <div class="grid g6">
+      <div class="card sol"><div class="ico ph"></div>Контроль качества на производстве</div>
+      <div class="card sol"><div class="ico ph"></div>Автоматизация испытаний</div>
+      <div class="card sol"><div class="ico ph"></div>Цифровизация производства</div>
+      <div class="card sol"><div class="ico ph"></div>Модернизация действующих линий</div>
+      <div class="card sol"><div class="ico ph"></div>Интеграция в MES/ERP</div>
+      <div class="card sol"><div class="ico ph"></div>Энергоэффективность</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="sec">
+  <div class="intro" style="width:170px"><h2>Реализованные проекты</h2><p>Реальные результаты для реальных задач</p><a class="more">Смотреть все проекты →</a></div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card proj"><div class="ph"></div><div class="in"><span class="badge">Машиностроение</span><b>Испытательный стенд для двигателей</b><small>Сокращение времени испытаний на 40%</small></div></div>
+    <div class="card proj"><div class="ph"></div><div class="in"><span class="badge">Пищевая промышленность</span><b>Система контроля качества упаковки</b><small>Снижение брака на 98%</small></div></div>
+    <div class="card proj"><div class="ph"></div><div class="in"><span class="badge">Металлургия</span><b>Модернизация линии термообработки</b><small>Рост производительности на 35%</small></div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="sec l">
+  <div class="intro" style="width:170px"><h2 style="font-size:18px">Новости / Статьи / Акции</h2><p>Полезные материалы об автоматизации</p><a class="more">Все материалы →</a></div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="card news"><div class="ph"></div><div><small>12 марта 2024</small><b>Как техническое зрение снижает издержки</b></div></div>
+    <div class="card news"><div class="ph"></div><div><small>5 марта 2024</small><b>5 шагов к успешной модернизации оборудования</b></div></div>
+    <div class="card news"><div class="ph"></div><div><small>26 февраля 2024</small><b>Приглашаем на выставку «Металлообработка-2024»</b></div></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="sec">
+  <div class="intro" style="width:170px"><h2 style="font-size:18px">Часто задаваемые вопросы</h2><p>Короткие ответы на важные вопросы</p><a class="more">Все вопросы →</a></div>
+  <div class="faq">
+    <div>Сколько длится типовой проект?</div><div>Предоставляете ли гарантию?</div>
+    <div>Работаете ли вы по 223-ФЗ / 44-ФЗ?</div><div>Оказываете ли вы сервисную поддержку?</div>
+    <div>Можно ли модернизировать, а не покупать новое?</div><div>С чего начать сотрудничество?</div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section class="cta">
+  <div><h2>Готовы обсудить ваш проект?</h2><p>Получите консультацию инженера и предварительное решение<br>уже на первой встрече.</p></div>
+  <form><div class="f"><input placeholder="Ваше имя"><input placeholder="Телефон или e-mail"><button type="button" class="btn btn-blue">Отправить заявку →</button></div><small>Мы свяжемся с вами в течение рабочего дня</small></form>
+</section>
+
+<!-- 14 -->
+<footer>
+  <div class="logo">ЛОГО</div>
+  <div class="tl">Промышленные<br>решения для реальных результатов</div>
+  <nav><a>Решения</a><a>Услуги</a><a>Продукция</a><a>Проекты</a><a>О компании</a><a>Контакты</a></nav>
+  <div class="fc">
+    <div class="ci"><svg viewBox="0 0 24 24" fill="#2c3d52"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>г. Москва, ул. Инженерная, д. 15</div>
+    <div class="ci"><svg viewBox="0 0 24 24" fill="#2c3d52"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>+7 (495) 123-45-67</div>
+    <div class="ci"><svg viewBox="0 0 24 24" fill="#2c3d52"><path d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7z"/></svg>info@intech.ru</div>
+  </div>
+</footer>
+<div class="fbot">
+  <span>© 2024 Intech. Все права защищены.</span>
+  <a>Политика конфиденциальности</a>
+  <div class="soc"><i></i><i></i><i></i></div>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>
