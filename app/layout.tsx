@@ -5,9 +5,9 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'НПФ ПроЭффект — автоматизация производств и модернизация оборудования', template: '%s — НПФ ПроЭффект' },
+  title: { default: 'САП-АВТОМАТИКА — автоматизация производств и модернизация оборудования', template: '%s — САП-АВТОМАТИКА' },
   description: 'Промышленная автоматизация под ключ: АСУ ТП, учёт энергоресурсов, техническое зрение, испытательные стенды, модернизация станков и прессов, производство РЭА и РТК. Пенза, работаем по всей России.',
-  openGraph: { type: 'website', locale: 'ru_RU', siteName: 'НПФ ПроЭффект' },
+  openGraph: { type: 'website', locale: 'ru_RU', siteName: 'САП-АВТОМАТИКА' },
   twitter: { card: 'summary_large_image' },
   formatDetection: { telephone: false },
 };

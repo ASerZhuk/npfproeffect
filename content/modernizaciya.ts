@@ -37,7 +37,7 @@ export const MODERN_COMPARE = [
     ],
   },
   {
-    title: 'Модернизация с ПроЭффект',
+    title: 'Модернизация с САП-АВТОМАТИКА',
     highlight: true,
     items: [
       { icon: 'CircleDollarSign', text: 'Стоимость: 20–35%*' },

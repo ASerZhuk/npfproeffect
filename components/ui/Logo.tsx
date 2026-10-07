@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import { cn } from '@/lib/cn';
-import { LOGO_PATHS } from './logo-paths';
+import { COMPANY } from '@/content/site';
+import SAP_MARK from '@/public/images/brand/sap-avtomatika-mark-v1.png';
 
 type LogoProps = {
   /** accent — на светлом фоне, inverse — на тёмном (design-system §7) */
@@ -7,38 +9,30 @@ type LogoProps = {
   className?: string;
 };
 
-/** Inline-SVG «НПФ √ПРО ЭФФЕКТ». viewBox 620×180; текст переведён в контуры. Размер: 172×50 desktop, 144×42 mobile. */
+/** Знак на прозрачном фоне и текстовое название компании. */
 export function Logo({ tone = 'accent', className }: LogoProps) {
   return (
-    <svg
-      viewBox="0 0 620 180"
-      role="img"
-      aria-label="НПФ ПроЭффект"
+    <span
       className={cn(
-        'block h-logo-h-mobile w-logo-w-mobile lg:h-logo-h lg:w-logo-w',
-        tone === 'accent' ? 'text-accent' : 'text-surface',
+        'inline-flex h-logo-h-mobile w-logo-w-mobile items-center gap-1.5 lg:h-logo-h xl:w-logo-w xl:gap-2',
+        tone === 'inverse' ? 'text-surface' : 'text-ink',
         className,
       )}
     >
-      <g fill="currentColor">
-        <g transform="translate(12 100) skewX(-9)">
-          <path d={LOGO_PATHS.npf} />
-        </g>
-        <g transform="translate(286 122) skewX(-9)">
-          <path d={LOGO_PATHS.pro} />
-        </g>
-        <g transform="translate(288 166) skewX(-9)">
-          <path d={LOGO_PATHS.eff} />
-        </g>
-      </g>
-      <path
-        d="M12 106H188L222 152L262 26H608"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="12"
-        strokeLinejoin="miter"
-        strokeMiterlimit="10"
+      <Image
+        src={SAP_MARK}
+        alt=""
+        sizes="(min-width: 1280px) 40px, 28px"
+        preload
+        unoptimized
+        className={cn(
+          'block h-7 w-7 shrink-0 object-contain xl:h-10 xl:w-10',
+          tone === 'inverse' && 'brightness-0 invert',
+        )}
       />
-    </svg>
+      <span className="whitespace-nowrap text-[12px] leading-none font-bold tracking-tight xl:text-[17px]">
+        {COMPANY.shortName}
+      </span>
+    </span>
   );
 }

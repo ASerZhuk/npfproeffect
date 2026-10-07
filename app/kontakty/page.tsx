@@ -7,7 +7,7 @@ import { ContactsMain } from '@/components/sections/kontakty/ContactsMain';
 
 export const metadata: Metadata = pageMeta({
   title: 'Контакты',
-  description: 'НПФ «ПроЭффект», г. Пенза, ул. Каракозова, 35. Телефоны +7 (963) 109-36-36, +7 (965) 633-06-80. Ответим в течение рабочего дня.',
+  description: 'ООО "САП-АВТОМАТИКА", г. Пенза, ул. Каракозова, 35. Телефоны +7 (963) 109-36-36, +7 (965) 633-06-80. Ответим в течение рабочего дня.',
   path: '/kontakty',
 });
 

@@ -11,7 +11,7 @@ export function AboutHero() {
         <Grid className="items-start gap-y-8">
           <div className="col-span-4 lg:col-span-5 xl:col-span-7">
             <h1 id="about-title" className="font-display text-h1 font-bold text-surface">
-              НПФ «ПроЭффект» — инженеры, которые отвечают за результат
+              ООО "САП-АВТОМАТИКА" — инженеры, которые отвечают за результат
             </h1>
             <p className="mt-6 max-w-lead text-lead text-surface">Научно-производственная фирма из Пензы: проектируем, производим и внедряем системы автоматизации.</p>
           </div>

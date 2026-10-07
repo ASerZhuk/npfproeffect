@@ -14,7 +14,7 @@ export function Footer() {
       <Container>
         <div className="grid items-center gap-6 md:grid-cols-2 xl:grid-cols-[auto_160px_minmax(0,1fr)_auto]">
           <div>
-            <Link href={ROUTES.home} aria-label="НПФ ПроЭффект — на главную" className="inline-block rounded-sm">
+            <Link href={ROUTES.home} aria-label="САП-АВТОМАТИКА — на главную" className="inline-block rounded-sm">
               <Logo />
             </Link>
           </div>

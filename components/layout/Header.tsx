@@ -95,7 +95,7 @@ export function Header() {
         className="fixed inset-x-0 top-0 z-40 h-site-header w-full border-b border-line bg-surface shadow-card"
       >
         <Container className="flex h-full items-center justify-between gap-6">
-          <Link href={ROUTES.home} scroll={false} onNavigate={() => onMenuNavigate(ROUTES.home)} aria-label="НПФ ПроЭффект — на главную" className="shrink-0 rounded-sm">
+          <Link href={ROUTES.home} scroll={false} onNavigate={() => onMenuNavigate(ROUTES.home)} aria-label="САП-АВТОМАТИКА — на главную" className="shrink-0 rounded-sm">
             <Logo />
           </Link>
 

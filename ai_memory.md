@@ -7,3 +7,8 @@ Rules: no hardcoded colors/px (use tokens/utilities), one h1, real case photos v
 Gotchas: Button already `inline-flex` -> hide via wrapper div; `next start` kills via `fuser -k PORT/tcp`; avif disabled (slow).
 Stage 2B done (08–12): report .website/code-stage2b.md. New: ui/SplitSection, sections/{case-szrt,o-kompanii,stati,kontakty,raschet}, content/{case-szrt,company,articles,quiz}.ts. Unconfirmed data = null in content (founded year, engineers, INN/OGRN, PDFs, docs, review).
 Audit fixes (2026-10-01): cases → content/cases.ts + app/proekty/[slug] (template components/sections/case-szrt/CasePage); hubs → content/direction-hubs.ts + app/resheniya/[slug]; SEO: lib/seo.tsx pageMeta (canonical+OG), robots.ts, sitemap.ts, opengraph-image.tsx, icon.svg, not-found.tsx, JSON-LD Org+Breadcrumbs; consent: ui/ConsentCheckbox (+requireConsent) in all 4 forms, /politika-konfidencialnosti. /stati noindex, out of footer. Pending: /api/lead integration (after client OK), INN/OGRN, docs, reviews, SITE_URL confirm. Deletable leftovers: app/proekty/asu-tp-rezinosmesheniya/, content/case-szrt.ts.
+
+## Deploy (demo)
+- https://npfproeffect.aszhukov.site → server `ssh aszhukov-new` (138.16.226.40), не трогать aszhukov.site (порт 3000)
+- next.config: output standalone; app: /var/www/npfproeffect/current, systemd `npfproeffect` (порт 3200), nginx `sites-available/npfproeffect`, SSL certbot webroot
+- Обновить: `npm run build` → rsync .next/standalone/ → current/, .next/static → current/.next/static, public → current/public; chown www-data; `systemctl restart npfproeffect`

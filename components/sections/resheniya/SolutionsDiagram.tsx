@@ -6,7 +6,7 @@ import { SOLUTION_MAP_NODES } from '@/content/solutions';
 const CENTER = { x: 50, y: 50 };
 
 /**
- * Инфографика 02-01 (solutions-five-directions): пять направлений вокруг узла «ПроЭффект».
+ * Инфографика 02-01 (solutions-five-directions): пять направлений вокруг узла «САП-АВТОМАТИКА».
  * Линии 1 px, без точечной сетки. Узлы — ссылки-якоря к карточкам 02-02 (дублируют, а не заменяют навигацию).
  * 390: подписи сокращаются визуально, полный текст остаётся в DOM.
  */
@@ -23,8 +23,8 @@ export function SolutionsDiagram() {
           <line key={n.id} x1={CENTER.x} y1={CENTER.y} x2={n.x} y2={n.y} strokeWidth={1} vectorEffect="non-scaling-stroke" />
         ))}
       </svg>
-      <p className="absolute top-1/2 left-1/2 flex h-10 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-md bg-accent font-display text-label font-semibold text-surface md:w-32">
-        ПроЭффект
+      <p className="absolute top-1/2 left-1/2 flex h-10 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-md bg-accent px-2 text-center font-display text-meta font-semibold text-surface md:w-32">
+        САП-АВТОМАТИКА
       </p>
       {SOLUTION_MAP_NODES.map((n) => (
         <Link

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { COMPANY, SITE_URL } from '@/content/site';
 
-const OG_IMAGE = { url: '/opengraph-image', width: 1200, height: 630, alt: 'НПФ ПроЭффект — автоматизация производств и модернизация оборудования под ключ' };
+const OG_IMAGE = { url: '/opengraph-image', width: 1200, height: 630, alt: 'САП-АВТОМАТИКА — автоматизация производств и модернизация оборудования под ключ' };
 
 /** Метаданные страницы: title/description + canonical + OG с теми же текстами. */
 export function pageMeta({ title, description, path, noindex }: { title: string; description: string; path: string; noindex?: boolean }): Metadata {
@@ -23,7 +23,7 @@ export const ORGANIZATION_LD = {
   name: COMPANY.name,
   alternateName: COMPANY.shortName,
   url: SITE_URL,
-  logo: `${SITE_URL}/icon.svg`,
+  logo: `${SITE_URL}/images/brand/sap-avtomatika-logo-v1.png`,
   description: 'Промышленная автоматизация под ключ: АСУ ТП, учёт энергоресурсов, техническое зрение, испытательные стенды, модернизация станков и прессов, производство РЭА и РТК.',
   address: { '@type': 'PostalAddress', streetAddress: 'ул. Каракозова, 35', addressLocality: 'Пенза', addressRegion: 'Пензенская область', addressCountry: 'RU' },
   telephone: COMPANY.phones.map((p) => p.href.replace('tel:', '')),
