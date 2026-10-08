@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export type HeroImage = 'home' | 'solutions' | 'vision' | 'modernization' | 'production' | 'services' | 'projects' | 'case' | 'about' | 'articles' | 'contacts' | 'quiz';
+export type HeroImage = 'home' | 'solutions' | 'vision' | 'modernization' | 'production' | 'services' | 'projects' | 'case' | 'about' | 'articles' | 'novosti' | 'contacts' | 'quiz';
 
 export function HeroBackground({ image }: { image: HeroImage }) {
   return (

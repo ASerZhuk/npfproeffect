@@ -10,6 +10,7 @@ export const ROUTES = {
   caseSzrt: '/proekty/asu-tp-rezinosmesheniya',
   about: '/o-kompanii',
   articles: '/stati',
+  news: '/novosti',
   contacts: '/kontakty',
   quiz: '/raschet',
   quizThanks: '/raschet/spasibo',
@@ -26,6 +27,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Услуги', href: ROUTES.services },
   { label: 'Проекты', href: ROUTES.projects, key: true },
   { label: 'О компании', href: ROUTES.about },
+  { label: 'Новости', href: ROUTES.news },
   { label: 'Контакты', href: ROUTES.contacts, key: true },
 ];
 

@@ -23,7 +23,7 @@ export const ORGANIZATION_LD = {
   name: COMPANY.name,
   alternateName: COMPANY.shortName,
   url: SITE_URL,
-  logo: `${SITE_URL}/images/brand/sap-avtomatika-logo-v1.png`,
+  logo: `${SITE_URL}/images/brand/sap-avtomatika-logo-v2.png`,
   description: 'Промышленная автоматизация под ключ: АСУ ТП, учёт энергоресурсов, техническое зрение, испытательные стенды, модернизация станков и прессов, производство РЭА и РТК.',
   address: { '@type': 'PostalAddress', streetAddress: 'ул. Каракозова, 35', addressLocality: 'Пенза', addressRegion: 'Пензенская область', addressCountry: 'RU' },
   telephone: COMPANY.phones.map((p) => p.href.replace('tel:', '')),

@@ -6,6 +6,7 @@ import { HomeEquipment } from '@/components/sections/home/HomeEquipment';
 import { HomeFaq } from '@/components/sections/home/HomeFaq';
 import { HomeHero } from '@/components/sections/home/HomeHero';
 import { HomeIndustries } from '@/components/sections/home/HomeIndustries';
+import { HomeNews } from '@/components/sections/home/HomeNews';
 import { HomeModernization } from '@/components/sections/home/HomeModernization';
 import { HomeProcess } from '@/components/sections/home/HomeProcess';
 import { HomeProjects } from '@/components/sections/home/HomeProjects';
@@ -33,6 +34,7 @@ export default function HomePage() {
       <HomeIndustries />
       <HomeEquipment />
       <HomeFaq />
+      <HomeNews />
       <CtaSection source="home" />
     </PageShell>
   );

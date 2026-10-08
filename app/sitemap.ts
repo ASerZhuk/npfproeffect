@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { CASES } from '@/content/cases';
+import { NEWS } from '@/content/news';
 import { DIRECTION_HUBS } from '@/content/direction-hubs';
 import { ROUTES } from '@/content/nav';
 import { SITE_URL } from '@/content/site';
@@ -17,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page(ROUTES.services, 0.8),
     page(ROUTES.projects, 0.8),
     ...CASES.map((c) => page(`/proekty/${c.slug}`, 0.7)),
+    page(ROUTES.news, 0.6),
+    ...NEWS.map((n) => page(`/novosti/${n.slug}`, 0.5)),
     page(ROUTES.about, 0.6),
     page(ROUTES.contacts, 0.7),
     page(ROUTES.quiz, 0.6),
